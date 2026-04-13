@@ -1,57 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 1 - Soal 5</title>
     <style>
-        .container{
-            display: vertical;
-            justify-content: center;
-            align-items: center;
-            border: 10px black solid;
-            margin: 5px;
-            max-width: 500px;
-            max-height: 500px;
+        table {
+            font-family: "Times New Roman", Times, serif;
+            margin: 50px auto;
+            width: 450px;      
+            font-size: 18px;   
         }
-        .title{
+        td {
+            padding: 5px 10px; 
+        }
+        th.red-header {
             background-color: red;
-            height: auto;
-            width: auto;
-            border: 3px black solid;
-            margin: 5px;
-        }
-        .list{
-            border: 3px black solid;
-            margin: 5px;
-            height: auto;
-            width: auto;
+            font-size: 32px;       
+            font-weight: bold;
+            padding: 30px 10px 
+            text-align: left;
         }
     </style>
-    <title>PRAK104-MUHAMMAD RYAN RIZKY RAHMADI</title>
 </head>
 <body>
-<?php
-$title=[
-    ["title"=> "<b>Daftar Smarthphone Samsung</b>"]
-]
-?>
-<?php
-$samsung = [
-    ["nama" => "Samsung Galaxy 22"],
-    ["nama" => "Samsung Galaxy 22+"],
-    ["nama" => "Samsung Galaxy A03"],
-    ["nama" => "Samsung Galaxy Xcover5"]
-];
-?>
-<div class="container">
-    <?php foreach($title as $titles): ?>
-        <div class="title">
-            <p><?= $titles["title"]; ?></p>
-        </div>
-    <?php endforeach; ?>
-    <?php foreach($samsung as $samsung2): ?>
-        <div class="list">
-            <p><?= $samsung2["nama"]; ?></p>
-        </div>
-    <?php endforeach; ?>
-</div>
+
+    <?php
+    $smartphones = [
+        "phone1" => "Samsung Galaxy S22",
+        "phone2" => "Samsung Galaxy S22+",
+        "phone3" => "Samsung Galaxy A03",
+        "phone4" => "Samsung Galaxy Xcover 5"
+    ];
+    ?>
+
+    <table border="1" cellspacing="2">
+        <tr>
+            <th class="red-header">Daftar Smartphone Samsung</th>
+        </tr>
+        <?php
+        foreach ($smartphones as $key => $value) {
+            echo "<tr><td>" . $value . "</td></tr>";
+        }
+        ?>
+    </table>
+
 </body>
 </html>
