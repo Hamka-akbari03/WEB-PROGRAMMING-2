@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('kegiatans', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('profil_id')->constrained('profils')->cascadeOnDelete();
+            $table->string('kegiatan_judul');
+            $table->text('kegiatan_deskripsi');
+            $table->string('kegiatan_waktu');
+            $table->string('kegiatan_dokumentasi')->nullable();
+            $table->text('kegiatan_kesan');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('kegiatans');
+    }
+};
